@@ -19,3 +19,21 @@
 | Episodic or sequential | Sequential | Each decision (route, speed, lane) affects later states and later decisions |
 | Static or dynamic | Dynamic | The environment keeps changing while the agent is deciding, e.g. moving traffic and changing weather |
 | Discrete or continuous | Continuous | Speed, steering angle, position and time take continuous values. (Route choice between towns is discrete) |
+## 3. Directed Graph of the Highway Network
+
+```mermaid
+graph LR
+    Nairobi <--> Thika
+    Thika <--> Muranga["Murang'a"]
+    Muranga <--> Nyeri
+    Nyeri <--> Nyahururu
+    Nyahururu <--> Nakuru
+    Nairobi <--> Limuru
+    Limuru <--> Naivasha
+    Naivasha <--> Nakuru
+    Nakuru <--> Kericho
+    Kericho <--> Kisumu
+    Nakuru <--> Eldoret
+    Eldoret <--> Kakamega
+    Kakamega <--> Kisumu
+```
