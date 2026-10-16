@@ -66,3 +66,42 @@ graph TD
 ```
 
 **Branches left out:** Naivasha under the Thika side and Nyahururu under the Limuru side are not expanded. Both would lead back to a town already on the path (Nairobi), which only creates a loop. The search stops at a goal node and does not expand Kisumu further.
+
+## 5. Path Cost and Optimal Path (Nairobi to Kisumu)
+
+The path cost function is the distance between towns in kilometres, taken from Google Maps (fastest driving route). The cost of a path is the sum of the distances of its edges.
+
+### 5.1 Distance between towns
+
+| # | From | To | Distance (km) |
+|---|---|---|---|
+| 1 | Nairobi | Thika | 46.1 |
+| 2 | Thika | Murang'a | 47.2 |
+| 3 | Murang'a | Nyeri | 65.1 |
+| 4 | Nyeri | Nyahururu | 104 |
+| 5 | Nyahururu | Nakuru | 63.3 |
+| 6 | Nairobi | Limuru | 40.5 |
+| 7 | Limuru | Naivasha | 54.8 |
+| 8 | Naivasha | Nakuru | 70 |
+| 9 | Nakuru | Kericho | 107 |
+| 10 | Kericho | Kisumu | 84 |
+| 11 | Nakuru | Eldoret | 156 |
+| 12 | Eldoret | Kakamega | 88 |
+| 13 | Kakamega | Kisumu | 53 |
+
+### 5.2 Cost of each path
+
+| Path | Route | Calculation (km) | Total (km) |
+|---|---|---|---|
+| 1 | Nairobi, Thika, Murang'a, Nyeri, Nyahururu, Nakuru, Kericho, Kisumu | 46.1 + 47.2 + 65.1 + 104 + 63.3 + 107 + 84 | 516.7 |
+| 2 | Nairobi, Thika, Murang'a, Nyeri, Nyahururu, Nakuru, Eldoret, Kakamega, Kisumu | 46.1 + 47.2 + 65.1 + 104 + 63.3 + 156 + 88 + 53 | 622.7 |
+| 3 | Nairobi, Limuru, Naivasha, Nakuru, Kericho, Kisumu | 40.5 + 54.8 + 70 + 107 + 84 | **356.3** |
+| 4 | Nairobi, Limuru, Naivasha, Nakuru, Eldoret, Kakamega, Kisumu | 40.5 + 54.8 + 70 + 156 + 88 + 53 | 462.3 |
+
+### 5.3 Optimal path
+
+The path with the lowest total cost is **Path 3**:
+
+**Nairobi → Limuru → Naivasha → Nakuru → Kericho → Kisumu = 356.3 km**
+
+It is 106.4 km shorter than the next best path (Path 4), so it is the optimal route for the trailer.
