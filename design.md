@@ -105,3 +105,14 @@ The path with the lowest total cost is **Path 3**:
 **Nairobi → Limuru → Naivasha → Nakuru → Kericho → Kisumu = 356.3 km**
 
 It is 106.4 km shorter than the next best path (Path 4), so it is the optimal route for the trailer.
+
+## 6. Evidence of Group Work
+
+The photo below was taken while we worked on this assignment together.
+
+![Team photo](team-photo.jpg)
+
+**Group members:**
+1. Flaviour Muiga, 174961
+2. Kayla Biwott, 190382
+3. Shekinah Gloria, 182989
